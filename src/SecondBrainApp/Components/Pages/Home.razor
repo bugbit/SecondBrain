@@ -1,7 +1,62 @@
 ﻿@page "/"
 
-<PageTitle>Home</PageTitle>
+<PageTitle>Dashboard · SecondBrain RAG</PageTitle>
 
-<h1>Hello, world!</h1>
+<section class="hero-grid">
+    <div class="hero-card">
+        <div>
+            <span class="eyebrow">Segundo cerebro personal</span>
+            <h1>Convierte notas dispersas en una wiki viva con búsqueda semántica.</h1>
+            <p>
+                Prototipo visual para capturar conocimiento, estructurarlo, consultarlo con RAG y mantener la privacidad mediante modelos locales con Ollama.
+            </p>
+        </div>
+        <div class="header-actions">
+            <a class="btn-sb-primary" href="knowledge">Diseñar una nota</a>
+            <a class="btn-sb-secondary" href="assistant">Ver asistente</a>
+        </div>
+    </div>
 
-Welcome to your new app.
+    <aside class="surface-card">
+        <span class="kicker">Flujo principal</span>
+        <div class="pipeline-list mt-3">
+            <div class="pipeline-step">
+                <span class="step-number">1</span>
+                <div><strong>Captura</strong><p class="muted mb-0">Notas, documentos, fragmentos técnicos e ideas.</p></div>
+            </div>
+            <div class="pipeline-step">
+                <span class="step-number">2</span>
+                <div><strong>Organización</strong><p class="muted mb-0">Categorías, etiquetas, wiki y relaciones.</p></div>
+            </div>
+            <div class="pipeline-step">
+                <span class="step-number">3</span>
+                <div><strong>RAG local</strong><p class="muted mb-0">Embeddings, Top-K, contexto y respuesta fundamentada.</p></div>
+            </div>
+        </div>
+    </aside>
+</section>
+
+<section class="metrics-grid" aria-label="Indicadores visuales del producto">
+    <div class="metric-card"><span>Notas indexables</span><strong>128</strong><span class="badge-sb info">mock UI</span></div>
+    <div class="metric-card"><span>Páginas wiki</span><strong>24</strong><span class="badge-sb success">estructuradas</span></div>
+    <div class="metric-card"><span>Chunks RAG</span><strong>1.8k</strong><span class="badge-sb warning">Top-K listo</span></div>
+    <div class="metric-card"><span>Privacidad</span><strong>Local</strong><span class="badge-sb success">Ollama</span></div>
+</section>
+
+<section class="features-grid">
+    <article class="feature-card">
+        <span class="feature-icon">✎</span>
+        <h2>Gestión de conocimiento</h2>
+        <p class="muted">Pantallas para crear notas, clasificar contenido, añadir etiquetas y visualizar documentos candidatos.</p>
+    </article>
+    <article class="feature-card">
+        <span class="feature-icon">⌕</span>
+        <h2>Búsqueda semántica</h2>
+        <p class="muted">Interfaz preparada para consultas, resultados Top-K, similitud y referencias a fuentes recuperadas.</p>
+    </article>
+    <article class="feature-card">
+        <span class="feature-icon">✦</span>
+        <h2>Asistente RAG</h2>
+        <p class="muted">Vista conversacional con contexto citado, avisos de falta de información y controles de generación local.</p>
+    </article>
+</section>
