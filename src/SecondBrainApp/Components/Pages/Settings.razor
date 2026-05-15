@@ -1,0 +1,37 @@
+﻿@page "/settings"
+
+<PageTitle>Configuración · SecondBrain RAG</PageTitle>
+
+<header class="page-header">
+    <span class="kicker">Configuración externa</span>
+    <h1>Parámetros previstos para modelos locales, chunking y recuperación.</h1>
+    <p>Vista de solo lectura para representar la configuración que más adelante alimentará servicios de aplicación e infraestructura.</p>
+</header>
+
+<section class="two-column-grid">
+    <article class="panel">
+        <h2>Ollama</h2>
+        <div class="config-row"><span>Base URL</span><strong>http://localhost:11434</strong></div>
+        <div class="config-row"><span>Modelo de chat</span><strong>qwen3</strong></div>
+        <div class="config-row"><span>Modelo embeddings</span><strong>mxbai-embed-large</strong></div>
+        <div class="config-row"><span>Temperatura</span><strong>0.2</strong></div>
+    </article>
+
+    <article class="panel">
+        <h2>RAG</h2>
+        <div class="config-row"><span>Chunk size</span><strong>800</strong></div>
+        <div class="config-row"><span>Chunk overlap</span><strong>120</strong></div>
+        <div class="config-row"><span>Top-K</span><strong>5</strong></div>
+        <div class="config-row"><span>Vector store</span><strong>PostgreSQL + pgvector</strong></div>
+    </article>
+</section>
+
+<section class="panel mt-3">
+    <h2>Principios de seguridad y privacidad</h2>
+    <ul class="check-list">
+        <li>No incluir claves API ni secretos reales en el repositorio.</li>
+        <li>Evitar telemetría innecesaria para proteger conocimiento personal.</li>
+        <li>No registrar contenido sensible de notas o conversaciones.</li>
+        <li>Priorizar modelos locales antes que proveedores cloud.</li>
+    </ul>
+</section>

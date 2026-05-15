@@ -1,0 +1,51 @@
+﻿@page "/wiki"
+
+<PageTitle>Wiki inteligente · SecondBrain RAG</PageTitle>
+
+<header class="page-header">
+    <span class="kicker">Wiki asistida por IA</span>
+    <h1>Organiza conocimiento técnico en páginas navegables.</h1>
+    <p>Maqueta para visualizar páginas wiki, relaciones entre conceptos, borradores generados y estructura de navegación.</p>
+</header>
+
+<section class="two-column-grid">
+    <article class="panel">
+        <div class="result-meta">
+            <h2>Mapa de conocimiento</h2>
+            <span class="badge-sb info">relaciones</span>
+        </div>
+        <div class="wiki-map">
+            <div class="result-card">
+                <div class="result-meta"><strong>RAG con Ollama</strong><span class="badge-sb success">página raíz</span></div>
+                <p class="muted">Describe cómo se combinan modelos locales, embeddings y recuperación de contexto.</p>
+                <div class="tag-row"><span class="tag">Ollama</span><span class="tag">Embeddings</span><span class="tag">Prompt final</span></div>
+            </div>
+            <div class="result-card">
+                <div class="result-meta"><strong>Vector search con pgvector</strong><span class="badge-sb">enlazada</span></div>
+                <p class="muted">Incluye configuración, índices vectoriales y consultas Top-K.</p>
+            </div>
+            <div class="result-card">
+                <div class="result-meta"><strong>Clean Architecture en Blazor</strong><span class="badge-sb">enlazada</span></div>
+                <p class="muted">Separa UI, casos de uso, dominio e infraestructura.</p>
+            </div>
+        </div>
+    </article>
+
+    <aside class="panel">
+        <h2>Borrador de página</h2>
+        <div class="surface-card shadow-none">
+            <span class="kicker">Propuesta IA</span>
+            <h3 class="mt-3">Introducción a pgvector</h3>
+            <p class="muted">pgvector permite almacenar embeddings dentro de PostgreSQL para habilitar búsqueda semántica sobre documentos propios.</p>
+            <ul class="check-list">
+                <li>Conceptos clave extraídos de notas relacionadas.</li>
+                <li>Ejemplos técnicos preparados para documentación.</li>
+                <li>Referencias internas hacia chunks y documentos origen.</li>
+            </ul>
+        </div>
+        <div class="card-actions mt-3">
+            <button class="btn-sb-primary" disabled>Aceptar borrador</button>
+            <button class="btn-sb-ghost" disabled>Reorganizar</button>
+        </div>
+    </aside>
+</section>

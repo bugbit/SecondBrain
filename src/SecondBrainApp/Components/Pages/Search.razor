@@ -1,0 +1,58 @@
+﻿@page "/search"
+
+<PageTitle>Búsqueda semántica · SecondBrain RAG</PageTitle>
+
+<header class="page-header">
+    <span class="kicker">Semantic search</span>
+    <h1>Encuentra conocimiento por significado, no solo por palabras clave.</h1>
+    <p>UI estática para consultas semánticas, resultados Top-K, puntuación de similitud y trazabilidad hacia fuentes recuperadas.</p>
+</header>
+
+<section class="two-column-grid">
+    <article class="panel">
+        <h2>Consulta</h2>
+        <form class="form-grid">
+            <div class="form-field full">
+                <label for="semantic-query">Pregunta o idea</label>
+                <input id="semantic-query" class="form-control-sb" value="¿Cómo configuré pgvector en Docker?" readonly />
+            </div>
+            <div class="form-field">
+                <label for="top-k">Top-K</label>
+                <select id="top-k" class="form-select-sb" disabled><option>5 resultados</option></select>
+            </div>
+            <div class="form-field">
+                <label for="scope">Ámbito</label>
+                <select id="scope" class="form-select-sb" disabled><option>Todo el conocimiento</option></select>
+            </div>
+        </form>
+        <div class="card-actions mt-3"><button class="btn-sb-primary" disabled>Buscar</button></div>
+    </article>
+
+    <aside class="panel">
+        <h2>Estado de índice</h2>
+        <div class="config-row"><span>Modelo embeddings</span><strong>mxbai-embed-large</strong></div>
+        <div class="config-row"><span>Chunks preparados</span><strong>1.842</strong></div>
+        <div class="config-row"><span>Vector store</span><strong>PostgreSQL + pgvector</strong></div>
+    </aside>
+</section>
+
+<section class="panel mt-3">
+    <div class="result-meta">
+        <h2>Resultados recuperados</h2>
+        <span class="badge-sb warning">datos de ejemplo</span>
+    </div>
+    <div class="search-results">
+        <article class="result-card">
+            <div class="result-meta"><strong>Configuración Docker de pgvector</strong><span>0.94</span></div>
+            <div class="progress-sb"><span style="width: 94%"></span></div>
+            <p class="muted mt-2 mb-2">Fragmento relacionado con el servicio PostgreSQL, extensión vector y volumen persistente.</p>
+            <div class="tag-row"><span class="tag">docs/rag/vector-search.md</span><span class="tag">chunk #12</span></div>
+        </article>
+        <article class="result-card">
+            <div class="result-meta"><strong>Embeddings en SecondBrain</strong><span>0.88</span></div>
+            <div class="progress-sb"><span style="width: 88%"></span></div>
+            <p class="muted mt-2 mb-2">Explica el flujo de generación de embedding y búsqueda de similitud.</p>
+            <div class="tag-row"><span class="tag">Nota técnica</span><span class="tag">chunk #27</span></div>
+        </article>
+    </div>
+</section>

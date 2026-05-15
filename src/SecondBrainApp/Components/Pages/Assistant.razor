@@ -1,0 +1,56 @@
+﻿@page "/assistant"
+
+<PageTitle>Asistente RAG · SecondBrain RAG</PageTitle>
+
+<header class="page-header">
+    <span class="kicker">Chatbot local con memoria documental</span>
+    <h1>Pregunta a tu base de conocimiento con respuestas fundamentadas.</h1>
+    <p>Diseño conversacional para mostrar contexto recuperado, referencias y límites cuando no exista información suficiente.</p>
+</header>
+
+<section class="two-column-grid">
+    <article class="panel">
+        <div class="result-meta">
+            <h2>Conversación</h2>
+            <span class="badge-sb success">Ollama local</span>
+        </div>
+        <div class="chat-window">
+            <div class="chat-message user">¿Cómo configuré pgvector en Docker?</div>
+            <div class="chat-message assistant">
+                <strong>Respuesta basada en tu conocimiento</strong>
+                <p class="mb-2">Configuraste PostgreSQL con la extensión pgvector, un volumen persistente y una cadena de conexión externa para que la capa de infraestructura gestione el acceso.</p>
+                <small class="muted">Fuentes usadas: 3 chunks recuperados.</small>
+            </div>
+            <div class="chat-message assistant">
+                <strong>Si falta contexto</strong>
+                <p class="mb-0">No tengo información suficiente en tu base de conocimiento para responder con seguridad.</p>
+            </div>
+        </div>
+        <form class="form-grid mt-3">
+            <div class="form-field full">
+                <label for="assistant-input">Mensaje</label>
+                <textarea id="assistant-input" class="textarea-sb" readonly>Resume mis notas sobre arquitectura limpia y RAG.</textarea>
+            </div>
+        </form>
+        <div class="card-actions mt-3">
+            <button class="btn-sb-primary" disabled>Enviar pregunta</button>
+            <button class="btn-sb-ghost" disabled>Limpiar conversación</button>
+        </div>
+    </article>
+
+    <aside class="panel">
+        <h2>Contexto recuperado</h2>
+        <ul class="source-list">
+            <li><span>1</span><span><strong>pgvector en Docker</strong><br /><small class="muted">Similitud 0.94 · chunk #12</small></span></li>
+            <li><span>2</span><span><strong>Pipeline RAG</strong><br /><small class="muted">Similitud 0.91 · chunk #04</small></span></li>
+            <li><span>3</span><span><strong>Clean Architecture</strong><br /><small class="muted">Similitud 0.87 · chunk #31</small></span></li>
+        </ul>
+        <hr />
+        <h3>Restricciones del prompt</h3>
+        <ul class="check-list">
+            <li>Responder solo con contexto recuperado.</li>
+            <li>Incluir referencias a fuentes usadas.</li>
+            <li>Reconocer falta de información con seguridad.</li>
+        </ul>
+    </aside>
+</section>
